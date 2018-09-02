@@ -1,7 +1,7 @@
 
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-5">
             <div class="container">
                 <a href="\hasta" class="btn btn-info" role="button">Yeni Kayıt</a>
                 <a href="#" class="btn btn-info" role="button">Düzenle</a>
@@ -37,24 +37,17 @@
                 </tr>
             </table>
         </div>
-        <div class="col-sm-1"></div>
-    </div>
-   
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-8">
-          <h3>Gelen hastalar</h3>
-                  <table class="table table-hover">
-                  <thead><tr><th>Ad ve Soyad</th><th>Hasta Numarası</th><th>Kimlik No </th><th>Arşiv Kodu</th><th>Hasta No </th></tr></thead>
-                  <tbody>
-                    <tr><td>güray ateş</td><td>668</td><td>132456 </td><td>v6588</td><td>4545 </td></tr>
-                    <tr><td>lora ateş</td><td>76768</td><td>45556</td><td>hgf5555</td><td>5455 </td></tr>
-                    <tr><td>yankı ateş</td><td>78768</td><td>555555</td><td>v556656</td><td>45343 </td></tr>
-                    <tr><td>lena ateş</td><td>786768</td><td>8555555 </td><td>fgh345534</td><td>453453</td></tr>
-                </tbody>
-          </table> 
+        <div class="col-sm-6">
+            <h3>Gelen hastalar</h3>
+            <ag-grid-angular 
+            style="width: 500px; height: 400px;" 
+            class="ag-theme-balham"
+            [enableSorting]="true"
+            [enableFilter]="true"
+            [rowData]="rowData | async" 
+            [columnDefs]="columnDefs"
+            >
+        </ag-grid-angular>
 
         </div>
-        <div class="col-sm-3"></div>
     </div>
-

@@ -1,25 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Doctors } from './doctors';
-import { DoctorService } from './doctor.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-doctors',
   templateUrl: './doctors.component.html',
   styleUrls: ['./doctors.component.css'],
-  providers: [DoctorService]
+
 })
 
 export class DoctorsComponent implements OnInit {
   title = 'Hastanemizin Doktorları';
-  drs: Doctors[];
+    
+  columnDefs = [
+    {headerName: 'Make', field: 'make' },
+    {headerName: 'Model', field: 'model' },
+    {headerName: 'Price', field: 'price'}
+];
+rowData: any;
 
-  constructor(private doctorService: DoctorService ) { }
+  constructor(private http: HttpClient) { }
  
-  ngOnInit() {  this.getDoctors(); }
+  ngOnInit() { this.rowData = this.http.get('https://api.myjson.com/bins/15psn9'); }
 
-  getDoctors() {
-      this.doctorService.getDoctors().subscribe(res => {this.drs = res; });
-    }
+ 
 
 }

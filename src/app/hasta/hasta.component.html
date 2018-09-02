@@ -1,13 +1,8 @@
-
-   
+    <h3>Yeni Hasta Kaydı</h3>
       <div class="row">
-          <div class="col-sm-1"></div>
-          <div class="col-sm-10">
-              <p>
-                Yeni Hasta Kaydı
-              </p>
-
-              <table >
+          <div class="col-sm-4">
+            
+            <table >
               <TR><td width="20"></td><td>T.C. Kimlik No" : </td><td><input type="text"></td></TR>
               <TR><td width="20"></td><td>Adı : </td><td><input type="text"></td></TR>
               <TR><td width="20"></td><td>Soyadı : </td><td><input type="text"></td></TR>
@@ -22,8 +17,69 @@
               <TR><td width="20"></td><td>E-posta Adres : </td><td><input type="email"></td></TR>
               <TR><td width="20"></td><td>E-posta Adres Tekrar :</td><td><input type="email"></td></TR>
               <TR><td width="20"></td><td>Boy </td><td><input type="password"></td></TR>
-              <TR><td width="20"></td><td>Kilosu </td><td><input type="password"></td></TR>
+              
+              <TR><td width="20"></td><td>İl </td>
+                <td><select class="form-control" id="sel1">
+                    <option>Adana</option>
+                    <option>İstanbul</option>
+                    <option>İzmir</option>
+                    <option>Ankara</option>
+                  </select></td>
+              </TR>
+              <TR><td width="20"></td><td>İlçe </td>
+                <td><select class="form-control" id="sel1">
+                    <option>Kozan</option>
+                    <option>Seyhan</option>
+                    <option>Ceyhan</option>
+                    <option>Pozantı</option>
+                  </select></td>
+              </TR>            
               </table>
+          </div>
+          <div class="col-sm-4">
+                <table >
+              <TR><td width="20"></td><td>Mesleği : </td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>İş Telefonu </td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>Sosyal Güvenlik Kurum</td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>Sigara</td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>Alkol</td><td><input type="datetime"></td></TR>
+              <TR><td width="20"></td><td>Hepatit </td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>Hiv</td><td><input type="text"></td></TR>
+              <TR><td width="20"></td><td>Diyabet</td><td> <input type="text"></td></TR>
+              <TR><td width="20"></td><td>Ev Telefonu : </td><td><input type="text"></td></TR>
+              <TR><td colspan="3">
+                  <div class="form-group">
+                      <label for="comment">Geçmiş Hastalıkları</label>
+                      <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </div>
+              </td></TR>
+              <TR><td colspan="3">
+                  <div class="form-group">
+                      <label for="comment">Aile Hastalıkları</label>
+                      <textarea class="form-control" rows="2" id="comment"></textarea>
+                    </div>
+              </td></TR>
+              </table>
+
+      
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <div class="checkbox">
+                <label><input type="checkbox" value="">Hipertansiyon 1</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Kalp</label>
+              </div>
+              <div class="checkbox disabled">
+                <label><input type="checkbox" value="">Böbrek</label>
+              </div>
+              <div class="checkbox disabled">
+                  <label><input type="checkbox" value="">Akciğer</label>
+                </div>              
+                <div class="checkbox disabled">
+                    <label><input type="checkbox" value="">Romatizma</label>
+                  </div>
+        </div>
       </div>
+
+

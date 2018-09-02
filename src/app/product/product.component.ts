@@ -12,6 +12,17 @@ import { ProductService } from "./product.service";
 export class ProductComponent implements OnInit {
   title = "Products";
   products: Product[]; 
+
+  columnDefs = [
+		{headerName: 'Name', field: 'name' },
+		{headerName: 'Email', field: 'email' },
+		{headerName: 'Location', field: 'location' },
+		{headerName: 'Profession', field: 'profession' },
+];
+rowData = [
+		{name : 'guray', email : 'gurayates@yahoo.com', location:'adana', profession: 'müh'},
+		{name : 'lora', email : 'lora@yahoo.com', location:'adana', profession: 'dr'},
+] 
   
   //constructer içinde sadece servisi kullanıcağımız için  servisden'den kalıtılmış bir  nesne oluşturduk
   // ve inject ettik

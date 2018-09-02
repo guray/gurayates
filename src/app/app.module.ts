@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { LoginComponent } from './login/login.component';
@@ -10,6 +9,8 @@ import { RandevuComponent } from './randevu/randevu.component';
 import { HastaComponent } from './hasta/hasta.component';
 import { HastalarComponent } from './hastalar/hastalar.component';
 import { ProductComponent } from './product/product.component';
+import { AgGridModule } from 'ag-grid-angular';
+import {DayPilot, DayPilotModule} from "daypilot-pro-angular";
 
 const routes : Routes=[
   {path: 'login', component: LoginComponent},
@@ -31,11 +32,14 @@ const routes : Routes=[
     HastaComponent,
     HastalarComponent,
     ProductComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    AgGridModule.withComponents([AppComponent]),
+    DayPilotModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
