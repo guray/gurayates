@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <th scope="row"></th>
+        <td>{{product.productId}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.unitPrice}} </td>
+        <td>{{product.quantityPerUnit}}</td>
+        <td>{{product.unitsInStock}}</td>
+      </tr>
+    </tbody>
+  </table>
