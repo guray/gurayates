@@ -9,10 +9,12 @@ import { HttpClient } from '@angular/common/http';
 export class HastalarComponent implements OnInit {
   
   columnDefs = [
-    {headerName: 'Make', field: 'make' },
-    {headerName: 'Model', field: 'model' },
-    {headerName: 'Price', field: 'price'}
-];
+    {headerName: 'Hasta No', field: 'hastano'},
+    {headerName: 'Ad Soyad', field: 'adsoyad'},
+    {headerName: 'Adres', field: 'adres'},
+    {headerName: 'Meslek', field: 'meslek'}
+  ];
+
 
 rowData: any;
 
@@ -20,7 +22,9 @@ rowData: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
+    //this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
+    // this.rowData = this.http.get('http://northwindapi.azurewebsites.net/api/products');
+    this.rowData = this.http.get('http://localhost:8080/hastalar');
   }
 
 }

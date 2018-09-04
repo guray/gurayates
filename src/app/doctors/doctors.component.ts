@@ -13,15 +13,16 @@ export class DoctorsComponent implements OnInit {
   title = 'Hastanemizin Doktorları';
     
   columnDefs = [
-    {headerName: 'Make', field: 'make' },
-    {headerName: 'Model', field: 'model' },
-    {headerName: 'Price', field: 'price'}
+    {headerName: 'Ad Soyad', field: 'adsoyad' },
+    {headerName: 'Ünvan', field: 'unvan' },
+    {headerName: 'Branş', field: 'brans'},
+    {headerName: 'Cep Telefonu', field: 'ceptel'}
 ];
 rowData: any;
 
   constructor(private http: HttpClient) { }
  
-  ngOnInit() { this.rowData = this.http.get('https://api.myjson.com/bins/15psn9'); }
+  ngOnInit() { this.rowData = this.http.get('http://localhost:8080/doctors'); }
 
  
 

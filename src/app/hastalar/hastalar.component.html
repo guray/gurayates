@@ -1,52 +1,32 @@
 
     <div class="row">
         <div class="col-sm-1"></div>
-        <div class="col-sm-5">
+        <div class="col-sm-3">
             <div class="container">
                 <a href="\hasta" class="btn btn-info" role="button">Yeni Kayıt</a>
                 <a href="#" class="btn btn-info" role="button">Düzenle</a>
                 <a href="#" class="btn btn-info" role="button">Sil</a>
                 <a href="#" class="btn btn-info" role="button">İptal</a>
               </div>
+<br>
             <table>
-                <tr>
-                  <td>
-                      <table>
-                          <tr><td>Ad ve Soyad</td><td><input type="text"></td></tr>
-                          <tr><td>Hasta Knumarası</td><td><input type="text"></td></tr>
-                          <tr><td>Kimlik No </td><td><input type="text"></td></tr>
-                          <tr><td>Arşiv Kodu: </td><td><input type="text"></td></tr>
-                          <tr><td>Hasta No : </td><td><input type="text"></td></tr>
-                       </table>
-                  </td>
-                  <td style="width:20">.</td>
-                  <td>
-                      <div class="card" style="width: 18rem;">
-                          <img class="card-img-top" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" alt="Card image cap" style="width: 20; height: 20; ">
-                          <div class="card-body">
-                             <a href="#" class="btn btn-primary">Resim Yükle</a>
-                          </div>
-                        </div>
-           
-                  </td>
-               </tr>
-                <tr>
-                  <td colspan="3">
-        
-                  </td>
-                </tr>
+                <tr><td>Ad ve Soyad</td><td><input type="text"></td></tr>
+                <tr><td>Hasta Knumarası</td><td><input type="text"></td></tr>
+                <tr><td>Kimlik No </td><td><input type="text"></td></tr>
+                <tr><td>Arşiv Kodu: </td><td><input type="text"></td></tr>
+                <tr><td>Hasta No : </td><td><input type="text"></td></tr>
             </table>
+
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-8">
             <h3>Gelen hastalar</h3>
             <ag-grid-angular 
-            style="width: 500px; height: 400px;" 
+            style="width: 700px; height: 400px;" 
             class="ag-theme-balham"
             [enableSorting]="true"
             [enableFilter]="true"
             [rowData]="rowData | async" 
-            [columnDefs]="columnDefs"
-            >
+            [columnDefs]="columnDefs">
         </ag-grid-angular>
 
         </div>
