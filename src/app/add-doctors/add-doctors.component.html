@@ -1,0 +1,30 @@
+<div class="col-md-6">
+    <h2 class="text-center">Doktor Ekle</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="kullaniciadi">Kullanıcı adı</label>
+            <input type="kullaniciadi" formControlName="kullaniciadi" placeholder="Kullaniciadi" name="kullaniciadi" class="form-control" id="kullaniciadi">
+          </div>
+
+      <div class="form-group">
+        <label for="adsoyad">Adı Soyadı</label>
+        <input type="adsoyad" formControlName="adsoyad" placeholder="Adsoyad" name="adsoyad" class="form-control" id="adsoyad">
+      </div>
+  
+      <div class="form-group">
+        <label for="unvan">Ünvanı:</label>
+        <input formControlName="unvan" placeholder="Unvan" name="unvan" class="form-control" id="unvan">
+      </div>
+  
+      <div class="form-group">
+        <label for="brans">Branşı:</label>
+        <input formControlName="brans" placeholder="Brans" name="brans" class="form-control" id="brans">
+      </div>
+      <div class="form-group">
+          <label for="ceptel">Cep tel:</label>
+          <input formControlName="ceptel" placeholder="Ceptel" name="ceptel" class="form-control" id="ceptel">
+        </div>
+      <button class="btn btn-success">Kaydet</button>
+    </form>
+  </div>
+  

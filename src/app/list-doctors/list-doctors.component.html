@@ -1,0 +1,27 @@
+<div class="col-md-8">
+    <h2> Doktorlar</h2>
+    <button class="btn btn-danger" (click)="addDoctors()"> Doktor Ekle</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>kullaniciadi</th>
+        <th>Ad soyad</th>
+        <th>Unvan</th>
+        <th>brans</th>
+        <th>Action</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let doctor of doctors">
+        <td >{{doctor.kullaniciadi}}</td>
+        <td>{{doctor.adsoyad}}</td>
+        <td>{{doctor.unvan}}</td>
+        <td>{{doctor.brans}}</td>
+        <td>{{doctor.ceptel}}</td>
+        <td><button class="btn btn-danger" (click)="deleteDoctors(doctor)"> Sil</button>
+          <button class="btn btn-danger" (click)="editDoctors(doctor)" style="margin-left: 20px;"> Düzenle</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

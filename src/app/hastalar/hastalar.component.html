@@ -1,33 +1,36 @@
-
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-3">
-            <div class="container">
-                <a href="\hasta" class="btn btn-info" role="button">Yeni Kayıt</a>
-                <a href="#" class="btn btn-info" role="button">Düzenle</a>
-                <a href="#" class="btn btn-info" role="button">Sil</a>
-                <a href="#" class="btn btn-info" role="button">İptal</a>
-              </div>
-<br>
-            <table>
-                <tr><td>Ad ve Soyad</td><td><input type="text"></td></tr>
-                <tr><td>Hasta Knumarası</td><td><input type="text"></td></tr>
-                <tr><td>Kimlik No </td><td><input type="text"></td></tr>
-                <tr><td>Arşiv Kodu: </td><td><input type="text"></td></tr>
-                <tr><td>Hasta No : </td><td><input type="text"></td></tr>
-            </table>
-
-        </div>
-        <div class="col-sm-8">
-            <h3>Gelen hastalar</h3>
-            <ag-grid-angular 
-            style="width: 700px; height: 400px;" 
-            class="ag-theme-balham"
-            [enableSorting]="true"
-            [enableFilter]="true"
-            [rowData]="rowData | async" 
-            [columnDefs]="columnDefs">
-        </ag-grid-angular>
-
-        </div>
-    </div>
+<div class="col-md-12">
+        <h2> Hastalar</h2>
+        <button class="btn btn-danger" (click)="addHasta()"> Hasta ekle</button>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>kimlikno</th>
+            <th>Ad soyad</th>
+            <th>hastano</th>
+            <th>dtarih</th>
+            <th>dyer</th>
+            <th>meslek</th>
+            <th>kangrubu</th>
+            <th>ceptel</th>
+            <th>adres</th>
+            <th></th>
+            <th></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let hast of hasta">
+            <td >{{hast.kimlikno}}</td>
+            <td>{{hast.adsoyad}}</td>
+            <td>{{hast.hastano}}</td>
+            <td>{{hast.dtarih}}</td>
+            <td>{{hast.dyer}}</td>
+            <td>{{hast.meslek}}</td>
+            <td>{{hast.kangrubu}}</td>
+            <td>{{hast.ceptel}}</td>
+            <td>{{hast.adres}}</td>
+            <td><button class="btn btn-danger" (click)="deleteHasta(hast)"> Sil</button></td>
+            <td><button class="btn btn-danger" (click)="editHasta(hast)" style="margin-left: 20px;"> Düzenle</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>

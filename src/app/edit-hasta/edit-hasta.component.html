@@ -1,0 +1,49 @@
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-3"> 
+      
+      <div class="form-group">
+            <label for="kimlikno">kimlikno:</label>
+            <input formControlName="kimlikno" placeholder="Kimlikno" name="kimlikno" class="form-control" id="kimlikno">
+          </div>
+  
+      <div class="form-group">
+        <label for="adsoyad">adsoyad:</label>
+        <input formControlName="adsoyad" placeholder="Adsoyad" name="adsoyad" class="form-control" id="adsoyad">
+      </div>
+      <div class="form-group">
+          <label for="hastano">hastano:</label>
+          <input formControlName="hastano" placeholder="Hastano" name="hastano" class="form-control" id="hastano">
+        </div>
+        <div class="form-group">
+            <label for="dtarih">dtarih:</label>
+            <input formControlName="dtarih" placeholder="Dtarih" name="dtarih" class="form-control" id="dtarih">
+          </div>
+
+          <div class="form-group">
+              <label for="dyer">dyer:</label>
+              <input formControlName="dyer" placeholder="Dyer" name="dyer" class="form-control" id="dyer">
+           </div>
+   </div>
+       <div class="col-md-3">
+          <div class="form-group">
+             <label for="meslek">meslek:</label>
+            <input formControlName="meslek" placeholder="Meslek" name="meslek" class="form-control" id="meslek">
+         </div>
+          <div class="form-group">
+           <label for="kangrubu">Unvanı:</label>
+           <input formControlName="kangrubu" placeholder="Kangrubu" name="kangrubu" class="form-control" id="kangrubu">
+        </div>     
+        <div class="form-group">
+            <label for="ceptel">ceptel:</label>
+            <input formControlName="ceptel" placeholder="Ceptel" name="ceptel" class="form-control" id="ceptel">
+          </div>    
+          <div class="form-group">
+              <label for="adres">adres:</label>
+              <input formControlName="adres" placeholder="Adres" name="adres" class="form-control" id="adres">
+            </div>                                     
+      <button class="btn btn-success">Update</button>
+      </div>
+    </form>
+  
+  

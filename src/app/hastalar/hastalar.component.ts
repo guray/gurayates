@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Router} from "@angular/router";
+import {HastaServices} from "../service/HastaServices";
+import {Hasta} from "../model/Hasta";
 
 @Component({
   selector: 'app-hastalar',
@@ -7,24 +9,31 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./hastalar.component.css']
 })
 export class HastalarComponent implements OnInit {
-  
-  columnDefs = [
-    {headerName: 'Hasta No', field: 'hastano'},
-    {headerName: 'Ad Soyad', field: 'adsoyad'},
-    {headerName: 'Adres', field: 'adres'},
-    {headerName: 'Meslek', field: 'meslek'}
-  ];
+  hasta: Hasta[];
 
-
-rowData: any;
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private hastaServices: HastaServices) { }
 
   ngOnInit() {
-    //this.rowData = this.http.get('https://api.myjson.com/bins/15psn9');
-    // this.rowData = this.http.get('http://northwindapi.azurewebsites.net/api/products');
-    this.rowData = this.http.get('http://localhost:8080/hastalar');
+    this.hastaServices.getHasta()
+      .subscribe( data => {
+        this.hasta = data;
+      });
   }
 
+  deleteHasta(hasta: Hasta): void {
+    this.hastaServices.deleteHasta(hasta.kimlikno)
+      .subscribe( data => {
+        this.hasta = this.hasta.filter(u => u !== hasta);
+      })
+  };
+
+  editHasta(hasta: Hasta): void {
+    localStorage.removeItem('kimlikno');
+    localStorage.setItem('kimlikno', hasta.kimlikno);
+    this.router.navigate(['edithasta']);
+  };
+
+  addHasta(): void {
+    this.router.navigate(['hasta']);
+  };
 }

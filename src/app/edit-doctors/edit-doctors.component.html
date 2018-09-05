@@ -1,0 +1,24 @@
+<div class="col-md-6">
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="adsoyad">Unvanı:</label>
+            <input formControlName="adsoyad" placeholder="Adsoyad" name="adsoyad" class="form-control" id="adsoyad">
+          </div>
+  
+      <div class="form-group">
+        <label for="unvan">Unvanı:</label>
+        <input formControlName="unvan" placeholder="Unvan" name="unvan" class="form-control" id="unvan">
+      </div>
+      <div class="form-group">
+          <label for="brans">Branşı:</label>
+          <input formControlName="brans" placeholder="Brans" name="brans" class="form-control" id="brans">
+        </div>
+        <div class="form-group">
+            <label for="ceptel">Cep Telefonu:</label>
+            <input formControlName="ceptel" placeholder="Cep tel" name="ceptel" class="form-control" id="ceptel">
+          </div>
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+  

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {first} from "rxjs/operators";
+import {AuthenticationService} from "../service/Authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -7,44 +10,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  name: string = '';
-  age: number;
-  found: boolean;
-  title = 'Çukurova Tıp Fakültesi Hastanesine';
-  
-  constructor(private httpClient:HttpClient){  }
-  
-  onNameKeyUp(event:any){
-    this.name = event.target.value;
-    this.found = false;
+  loginForm: FormGroup;
+  submitted = false;
+  invalidLogin = false;
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthenticationService) { }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
+    if(this.loginForm.controls.email.value == 'gurayates@yahoo.com' && this.loginForm.controls.password.value == 'password') {
+        this.router.navigate(['hastalar']);
+    }else {
+      this.invalidLogin = true;
+    }
   }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
-  getProfile(){
-    this.httpClient.get(`https://my-json-server.typicode.com/techsithgit/json-faker-directory/profiles/?name=${this.name}`)
-    .subscribe(
-      (data:any[]) => {
-        if(data.length) {
-          this.age = data[0].age;
-          this.found = true;
-        }
-      }
-    );
-}
 
-postProfile(){
-  this.httpClient.post(`https://my-json-server.typicode.com/techsithgit/json-faker-directory/profiles/`,
-  {
-    name:'mark',
-    age: 41
-  })
-  .subscribe(
-    (data:any) => {
-      console.log(data);
-    }
-  );
-}
 
 }

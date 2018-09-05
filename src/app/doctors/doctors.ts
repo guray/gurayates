@@ -6,4 +6,3 @@ export class Doctors {
     UnitPrice: number;
     UnitsInStock: number;
 }
-
