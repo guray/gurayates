@@ -21,7 +21,13 @@ import { EditDoctorsComponent } from './edit-doctors/edit-doctors.component';
 import { HastaServices } from './service/HastaServices';
 import { EditHastaComponent } from './edit-hasta/edit-hasta.component';
 import { AuthenticationService } from "./service/Authentication.service";
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { AddUserComponent } from './add-user/add-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { UsersService } from './service/UsersService';
+import {  KeyUpComponent_v4 } from './hastalar/keyup-component';
 
 const routes : Routes=[
   {path: 'login', component: LoginComponent},
@@ -36,6 +42,9 @@ const routes : Routes=[
   {path: 'listdoctors', component: ListDoctorsComponent},
   {path: 'editdoctors', component: EditDoctorsComponent},
   {path: 'edithasta', component: EditHastaComponent},
+  {path: 'adduser', component: AddUserComponent},
+  {path: 'edituser', component: EditUserComponent},
+  {path: 'listuser', component: ListUserComponent}
 ];
 
 @NgModule({
@@ -51,7 +60,11 @@ const routes : Routes=[
       AddDoctorsComponent,
       ListDoctorsComponent,
       EditDoctorsComponent,
-      EditHastaComponent
+      EditHastaComponent,
+      AddUserComponent,
+      EditUserComponent,
+      ListUserComponent,
+      KeyUpComponent_v4,
    ],
    imports: [
       BrowserModule,
@@ -59,10 +72,13 @@ const routes : Routes=[
       RouterModule.forRoot(routes),
       AgGridModule.withComponents([AppComponent]),
       DayPilotModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      [BrowserAnimationsModule],
+      [MatButtonModule, MatCheckboxModule],
   
   ],
-  providers: [AuthenticationService, DoctorsService, HastaServices],
+  exports: [MatButtonModule, MatCheckboxModule],
+  providers: [AuthenticationService, DoctorsService, HastaServices, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,16 @@
 <div class="col-md-12">
         <h2> Hastalar</h2>
         <button class="btn btn-danger" (click)="addHasta()"> Hasta ekle</button>
-        <table class="table table-striped">
+        <!-- <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="kimlikno">kimlikno</label>
+              <input type="kimlikno" formControlName="kimlikno" placeholder="kimlikno" name="kimlikno" class="form-control" id="username">
+            </div>
+
+        <button class="btn btn-success">bul</button>
+      </form> -->
+
+         <table class="table table-striped">
           <thead>
           <tr>
             <th>kimlikno</th>
@@ -28,6 +37,7 @@
             <td>{{hast.kangrubu}}</td>
             <td>{{hast.ceptel}}</td>
             <td>{{hast.adres}}</td>
+            <!-- <td><button class="btn btn-danger" (click)="getHastaBykimlikno(hast)"> get</button></td> -->
             <td><button class="btn btn-danger" (click)="deleteHasta(hast)"> Sil</button></td>
             <td><button class="btn btn-danger" (click)="editHasta(hast)" style="margin-left: 20px;"> Düzenle</button></td>
           </tr>

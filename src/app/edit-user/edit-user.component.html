@@ -1,0 +1,22 @@
+<div class="col-md-3">
+  <h2 class="text-left">Kullanıcı Güncelleme</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <!-- <div class="form-group">
+          <label for="username">Kullanıcı Adı</label>
+          <input formControlName="username" placeholder="Username" name="username" class="form-control" id="username">
+        </div> -->
+        <div class="form-group">
+          <label for="password">Şifre:</label>
+          <input formControlName="password" placeholder="Password" name="password" class="form-control" id="password">
+        </div>
+    <div class="form-group">
+      <label for="name">Ad Soyad:</label>
+      <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+      </div>
+    <button class="btn btn-success">Kaydet</button>
+  </form>
+</div>

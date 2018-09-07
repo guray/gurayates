@@ -23,7 +23,7 @@ export class EditDoctorsComponent implements OnInit {
       return;
     }
     this.editForm = this.formBuilder.group({
-      kullaniciadi: [],
+      kullaniciadi: ['', Validators.required],
       adsoyad: ['', Validators.required],
       unvan: ['', Validators.required],
       brans: ['', Validators.required],
